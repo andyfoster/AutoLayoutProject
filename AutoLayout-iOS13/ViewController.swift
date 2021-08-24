@@ -8,19 +8,28 @@
 
 import UIKit
 
+func randomNumber() -> Int {
+    return Int.random(in: 0...5)
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
+    @IBOutlet weak var rollTotal: UILabel!
+    
     @IBAction func rollButtonPressed(_ sender: UIButton) {
+        
+        let randomOne = randomNumber()
+        let randomTwo = randomNumber()
         
         let allDice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
         
-        diceImageView1.image = allDice[Int.random(in: 0...5)]
-        diceImageView2.image = allDice[Int.random(in: 0...5)]
+        diceImageView1.image = allDice[randomOne]
+        diceImageView2.image = allDice[randomTwo]
+        
+        rollTotal.text = String(randomOne + randomTwo)
         
     }
-    
 }
-
