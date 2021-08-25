@@ -8,7 +8,7 @@
 
 import UIKit
 
-func randomNumber() -> Int {
+func generateRandomNumber() -> Int {
     return Int.random(in: 0...5)
 }
 
@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var rollTotal: UILabel!
     
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        let randomOne = randomNumber()
-        let randomTwo = randomNumber()
+        let randomOne = generateRandomNumber()
+        let randomTwo = generateRandomNumber()
         
         let allDice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
         
