@@ -16,11 +16,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
-    
     @IBOutlet weak var rollTotal: UILabel!
     
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        
         let randomOne = randomNumber()
         let randomTwo = randomNumber()
         
@@ -29,7 +27,6 @@ class ViewController: UIViewController {
         diceImageView1.image = allDice[randomOne]
         diceImageView2.image = allDice[randomTwo]
         
-        rollTotal.text = String(randomOne + randomTwo)
-        
+        rollTotal.text = String(randomOne + 1 + randomTwo + 1)
     }
 }
